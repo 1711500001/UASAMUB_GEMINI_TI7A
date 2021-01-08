@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "488364762637",
+    "project_id": "uas-amub-ti7a-01-07-10-11",
+    "storage_bucket": "uas-amub-ti7a-01-07-10-11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488364762637:android:419e5ae59eacdb7fb41744",
+        "android_client_info": {
+          "package_name": "com.example.uas__amub_ti7a_01_07_10_11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488364762637-ji4drvvf0v784h48nugaajdlhknkbiqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDsMR-CZYiXfazPtjxp7_MMvrFjBA7xCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488364762637-ji4drvvf0v784h48nugaajdlhknkbiqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
