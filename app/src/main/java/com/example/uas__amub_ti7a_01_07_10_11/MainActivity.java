@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 Date date = ts;
                 String key = (date.toString()).replace(".", ":");
                 Toast.makeText(getApplicationContext(), "Please, waiting....", Toast.LENGTH_LONG).show();
-                reference = FirebaseDatabase.getInstance().getReference().child("Register One").child(user.getText().toString()).child("transfer").child(key);
+                reference = FirebaseDatabase.getInstance().getReference().child("Rgegister One").child(user.getText().toString()).child("transfer").child(key);
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
