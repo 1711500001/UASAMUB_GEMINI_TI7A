@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Menampilkan custom dialog
+        //Menampilkan custom dialog...
         dialog.show();
     }
     public void save(){
