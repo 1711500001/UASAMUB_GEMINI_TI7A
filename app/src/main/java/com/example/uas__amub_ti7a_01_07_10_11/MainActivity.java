@@ -9,8 +9,10 @@ import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.webkit.MimeTypeMap;
@@ -43,7 +45,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView ImageContainer;
+    ImageView ImageContainer, pulsa;
     TextView rec, user,saldo;
     FloatingActionButton fab;
     EditText toUser,sandi,nominal;
@@ -54,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
     Uri photo_location;
     String pass="";
     Intent it1;
+
+
+    MediaPlayer mediaPlayer;
+
+
+
+
     DatabaseReference reference;
     StorageReference storage;
     Locale locale = new Locale("en", "US");
@@ -72,6 +81,29 @@ public class MainActivity extends AppCompatActivity {
                 .format(Double.parseDouble(extras.getString("saldo"))));
         loadPhoto();
         addData();
+
+        //buka komen utk mendengar lagu
+        /*mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.worldismine);
+        mediaPlayer.setVolume(0.3f,0.3f);
+        mediaPlayer.start();
+        mediaPlayer.setLooping(true);*/
+
+
+
+
+
+
+
+
+        //aktif icon pulsa
+        /*ulsa = findViewById(R.id.pulsa);
+        pulsa.setOnClickListener(new  View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gotopulsa = new Intent(MainActivity.this,PulsaActivity.class);
+                startActivity(gotopulsa);
+            }
+        });*/
 
         rec = findViewById(R.id.receive);
         it1 = new Intent(this, SecondActivity.class);
@@ -156,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                 Date date = ts;
                 String key = (date.toString()).replace(".", ":");
                 Toast.makeText(getApplicationContext(), "Please, waiting....", Toast.LENGTH_LONG).show();
-                reference = FirebaseDatabase.getInstance().getReference().child("Rgegister One").child(user.getText().toString()).child("transfer").child(key);
+                reference = FirebaseDatabase.getInstance().getReference().child("Register One").child(user.getText().toString()).child("transfer").child(key);
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -368,4 +400,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    /*class song extends MainActivity {
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.worldismine);
+
+            mediaPlayer.start();
+
+        }
+
+        @Override
+        protected void onPause() {
+            super.onPause();
+            mediaPlayer.stop();
+            mediaPlayer.release();
+
+        }
+
+    }*/
 }

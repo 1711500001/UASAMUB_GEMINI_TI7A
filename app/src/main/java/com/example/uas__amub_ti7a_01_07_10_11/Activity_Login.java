@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 public class Activity_Login extends AppCompatActivity {
     private TextView fbook,acc,sin,sup;
     private EditText user,pswd;
+
+    MediaPlayer mediaPlayer;
 
     DatabaseReference reference;
     String USERNAME_KEY = "usernamekey";
@@ -46,6 +49,20 @@ public class Activity_Login extends AppCompatActivity {
             }
         });
 
+
+
+        acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent gotopendaftaran = new Intent(Activity_Login.this,Activity_Signup.class);
+                startActivity(gotopendaftaran);
+            }
+        });
+
+
+
+
+
         sin.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -57,6 +74,8 @@ public class Activity_Login extends AppCompatActivity {
 
                 final String username = user.getText()+"";
                 final String password = pswd.getText()+"";
+
+
 
                 if(username.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Username empty!", Toast.LENGTH_SHORT).show();

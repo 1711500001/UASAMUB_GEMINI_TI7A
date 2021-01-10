@@ -3,6 +3,7 @@
     package="com.example.uas__amub_ti7a_01_07_10_11">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
@@ -12,6 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UAS__AMUB_TI7A_01_07_10_11">
         <activity android:name=".Activity_Signup" ></activity>
+        <activity android:name=".PulsaActivity" />
+
         <activity android:name=".MainActivity" />
         <activity android:name=".Activity_Login">
             <intent-filter>
